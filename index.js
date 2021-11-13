@@ -4,7 +4,7 @@ const button_styles = {
         "background-color": "white",
         "color": "black"
     },
-    "border": "1px solid black"
+    "border": "1px solid #000000"
 } 
 
 function createCart(){
