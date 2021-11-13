@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="http://sdks.shopifycdn.com/buy-button/1.0.0/buybutton.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="cartToggle">
+        <div id="toggle2">
+        </div>
+    </div>
+    <script>
+        const client = ShopifyBuy.buildClient({
+            domain: 'strongox-supplements.myshopify.com',
+            storefrontAccessToken: '22c0a05958587edfe181b581bcc29a23'
+        });
+
+        var ui = ShopifyBuy.UI.init(client);
+
+        ui.createComponent('cart', {
+            toggles: [{
+                node: document.getElementById('toggle2'),
+            }],
+            options: {
+                toggle: {
+                    iframe: true,
+                    sticky: false,
+                    templates: {
+                        count: '<div class="{{data.classes.toggle.count}}" data-element="toggle.count">{{# data.count > 0}}<span>{{data.count}}</span>{{/ data.count > 0}}</div>',
+                    },
+                    contents: {
+                        count: true,
+                        icon: true,
+                    },
+                    order: ['icon', 'count'],
+                    styles: {
+                        toggle: {
+                            "background-color": "transparent",
+                            ":hover": {
+                                "background-color": 'white'
+                            },
+                            "height": 'auto'
+                        },
+                        iconPath: {
+                            "fill": "black",
+                        },
+                        count: {
+                            "margin-top": "8px",
+                            "margin-left": "4px"
+                        }
+                    }
+                }
+            }
+        });
+
+        ui.createComponent('collection', {
+            id: '268058362018',
+            node: document.getElementById('collection-component-1630274693348'),
+            moneyFormat: '%24%7B%7Bamount%7D%7D',
+            options: {
+            "product": {
+                "styles": {
+                "product": {
+                    "@media (min-width: 601px)": {
+                    "max-width": "calc(33.33333% - 30px)",
+                    "margin-left": "30px",
+                    "margin-bottom": "50px",
+                    "width": "calc(33.33333% - 30px)"
+                    },
+                    "img": {
+                    "height": "calc(100% - 15px)",
+                    "position": "absolute",
+                    "left": "0",
+                    "right": "0",
+                    "top": "0"
+                    },
+                    "imgWrapper": {
+                    "padding-top": "calc(75% + 15px)",
+                    "position": "relative",
+                    "height": "0"
+                    }
+                },
+                "button": {
+                    ":hover": {
+                    "background-color": "#2e2e2e"
+                    },
+                    "background-color": "#333333",
+                    ":focus": {
+                    "background-color": "#2e2e2e"
+                    }
+                },
+                "price": {
+                    "color": "#000000"
+                },
+                "compareAt": {
+                    "color": "#000000"
+                },
+                "unitPrice": {
+                    "color": "#000000"
+                }
+                },
+                "buttonDestination": "modal",
+                "contents": {
+                "button": false,
+                "options": false
+                },
+                "isButton": true,
+                "text": {
+                "button": "View product"
+                }
+            },
+            "productSet": {
+                "styles": {
+                "products": {
+                    "@media (min-width: 601px)": {
+                    "margin-left": "-30px"
+                    }
+                }
+                }
+            },
+            "modalProduct": {
+                "contents": {
+                "img": false,
+                "imgWithCarousel": true,
+                "button": false,
+                "buttonWithQuantity": true
+                },
+                "styles": {
+                "product": {
+                    "@media (min-width: 601px)": {
+                    "max-width": "100%",
+                    "margin-left": "0px",
+                    "margin-bottom": "0px"
+                    }
+                },
+                "button": {
+                    ":hover": {
+                    "background-color": "#2e2e2e"
+                    },
+                    "background-color": "#333333",
+                    ":focus": {
+                    "background-color": "#2e2e2e"
+                    }
+                },
+                "price": {
+                    "font-family": "Helvetica Neue, sans-serif",
+                    "font-weight": "normal",
+                    "font-size": "18px",
+                    "color": "#4c4c4c"
+                },
+                "compareAt": {
+                    "font-family": "Helvetica Neue, sans-serif",
+                    "font-weight": "normal",
+                    "font-size": "15.299999999999999px",
+                    "color": "#4c4c4c"
+                },
+                "unitPrice": {
+                    "font-family": "Helvetica Neue, sans-serif",
+                    "font-weight": "normal",
+                    "font-size": "15.299999999999999px",
+                    "color": "#4c4c4c"
+                }
+                },
+                "text": {
+                "button": "Add to cart"
+                }
+            },
+            "option": {},
+            "cart": {
+                "styles": {
+                "button": {
+                    ":hover": {
+                    "background-color": "#2e2e2e"
+                    },
+                    "background-color": "#333333",
+                    ":focus": {
+                    "background-color": "#2e2e2e"
+                    }
+                }
+                },
+                "text": {
+                "total": "Subtotal",
+                "button": "Checkout"
+                },
+                "contents": {
+                "note": true
+                }
+            },
+            "toggle": {
+                "styles": {
+                "toggle": {
+                    "background-color": "#333333",
+                    ":hover": {
+                    "background-color": "#2e2e2e"
+                    },
+                    ":focus": {
+                    "background-color": "#2e2e2e"
+                    }
+                }
+                }
+            }
+            },
+        });
+    </script>
+</body>
+</html>
