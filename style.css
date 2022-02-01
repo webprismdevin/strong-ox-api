@@ -31,6 +31,7 @@
     top: 0px;
     z-index: -1;
     width: 120%;
+    height: calc(100vh - 80px);
 }
 
 .product-set-wrap {
